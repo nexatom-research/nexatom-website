@@ -169,6 +169,9 @@ def main() -> None:
         "https://github.com/nexatom-research/nexatom-downloads/releases/tag/time-tagger-UTT810-v1.0.1",
         "https://downloads.nexatom.in/apps/time-tagger/UTT810/latest.json",
         "https://in.linkedin.com/in/subodhvashist",
+        "https://dst.gov.in/rri-spinoff-companys-tunable-lasers-could-lower-costs-quantum-optics-labs",
+        "https://timesofindia.indiatimes.com/india/rris-first-spinoff-to-produce-cost-effective-laser-systems-for-quantum-optics/articleshow/111858581.cms",
+        "https://www.deccanherald.com/science/rri-spin-off-companys-low-cost-laser-systems-to-boost-quantum-optics-3113282",
     ]
     for url in required_external:
         if url not in all_text:
