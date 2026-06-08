@@ -86,6 +86,20 @@ def main() -> None:
         if phrase not in product:
             fail(f"product page missing phrase: {phrase}")
 
+    download = (SITE / "downloads/utt810/index.html").read_text(encoding="utf-8")
+    for phrase in [
+        "Nexatom UTT810 Time Tagger Software",
+        "Download for Windows",
+        "1.0.1",
+        "85.78 MB",
+        "cee5a78865e0b0923649c4f922327ab54de059721135fefa8bda499ed6510e3a",
+        "After first install, future updates are available inside the app.",
+        "https://github.com/nexatom-research/nexatom-downloads/releases/download/time-tagger-UTT810-v1.0.1/Nexatom_UTT810_Setup_1.0.1.exe",
+        "https://downloads.nexatom.in/apps/time-tagger/UTT810/latest.json",
+    ]:
+        if phrase not in download:
+            fail(f"download page missing phrase: {phrase}")
+
     cname = (SITE / "CNAME").read_text(encoding="utf-8").strip()
     if cname != "www.nexatom.in":
         fail("site/CNAME must contain www.nexatom.in")
