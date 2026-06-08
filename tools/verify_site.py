@@ -41,6 +41,8 @@ def main() -> None:
             fail(f"{html.relative_to(ROOT)} contains depth-sensitive relative nav links")
         if 'ghs.googlehosted.com' in text or 'drive.google.com' in text:
             fail(f"{html.relative_to(ROOT)} contains old Google-hosted download/media link")
+        if "Nexatom Research & Instruments" in text:
+            fail(f"{html.relative_to(ROOT)} has unescaped title ampersand")
         if '<header class="site-header">' not in text:
             fail(f"{html.relative_to(ROOT)} missing shared header")
         if '<footer class="site-footer">' not in text:
