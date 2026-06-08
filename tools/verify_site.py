@@ -49,7 +49,6 @@ def main() -> None:
         "404.html",
         "robots.txt",
         "sitemap.xml",
-        "CNAME",
         ".nojekyll",
         "assets/css/styles.css",
     ]
@@ -177,9 +176,8 @@ def main() -> None:
         if url not in all_text:
             fail(f"missing required external URL: {url}")
 
-    cname = (SITE / "CNAME").read_text(encoding="utf-8").strip()
-    if cname != "www.nexatom.in":
-        fail("site/CNAME must contain www.nexatom.in")
+    if (SITE / "CNAME").exists():
+        fail("site/CNAME should not be present until the custom domain is ready for cutover")
 
     forbidden = [
         SITE / "docs",
