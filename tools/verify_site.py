@@ -23,16 +23,25 @@ class LinkParser(HTMLParser):
                 self.links.append((name, value))
 
 
-def internal_target_exists(url: str) -> bool:
+def internal_target_exists(html: Path, url: str) -> bool:
     parsed = urlparse(url)
     path = parsed.path
-    if not path.startswith("/"):
+    if path.startswith("/"):
         return False
-    if path == "/":
-        return (SITE / "index.html").exists()
+    base = html.parent
+    if path in {"", "."}:
+        target = base
+    else:
+        target = (base / path).resolve()
+    try:
+        target.relative_to(SITE.resolve())
+    except ValueError:
+        return False
+    if target.is_dir() or url.endswith("/"):
+        return (target / "index.html").exists()
     if path.endswith("/"):
-        return (SITE / path.lstrip("/") / "index.html").exists()
-    return (SITE / path.lstrip("/")).exists()
+        return (target / "index.html").exists()
+    return target.exists()
 
 
 def main() -> None:
@@ -59,10 +68,11 @@ def main() -> None:
     html_files = sorted(SITE.rglob("*.html"))
     for html in html_files:
         text = html.read_text(encoding="utf-8")
-        if '<link rel="stylesheet" href="/assets/css/styles.css">' not in text:
-            fail(f"{html.relative_to(ROOT)} must load /assets/css/styles.css")
+        if 'assets/css/styles.css' not in text:
+            fail(f"{html.relative_to(ROOT)} must load assets/css/styles.css")
         if 'href="products/' in text or 'href="downloads/' in text:
-            fail(f"{html.relative_to(ROOT)} contains depth-sensitive relative nav links")
+            if html.parent != SITE:
+                fail(f"{html.relative_to(ROOT)} contains depth-sensitive relative nav links")
         if 'ghs.googlehosted.com' in text or 'drive.google.com' in text:
             fail(f"{html.relative_to(ROOT)} contains old Google-hosted download/media link")
         if "Nexatom Research & Instruments" in text:
@@ -85,9 +95,9 @@ def main() -> None:
                 continue
             if value.startswith(("http://", "https://")):
                 continue
-            if not value.startswith("/"):
-                fail(f"{html.relative_to(ROOT)} has non-root-relative {attr}: {value}")
-            if not internal_target_exists(value):
+            if value.startswith("/"):
+                fail(f"{html.relative_to(ROOT)} has root-relative {attr}: {value}")
+            if not internal_target_exists(html, value):
                 fail(f"{html.relative_to(ROOT)} points to missing internal target: {value}")
 
     home = (SITE / "index.html").read_text(encoding="utf-8")
