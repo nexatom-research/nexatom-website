@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>UTT810 | Nexatom Research & Instruments</title>
+  <title>UTT810 | Nexatom Research &amp; Instruments</title>
   <link rel="stylesheet" href="/assets/css/styles.css">
 </head>
 <body>
@@ -50,7 +50,7 @@
         <div class="metric"><strong>8</strong>input channels</div>
         <div class="metric"><strong>1 ps</strong>time bin width</div>
         <div class="metric"><strong>&lt;10 ps</strong>timing jitter specification</div>
-        <div class="metric"><strong>USB 3</strong>USB 3 data transfer above 300 MB/s</div>
+        <div class="metric"><strong>USB 3</strong>data transfer above 300 MB/s</div>
       </div>
       <div class="grid">
         <div class="metric"><strong>4 ns</strong>dead time</div>
@@ -75,17 +75,17 @@
       <h2>Real-time FPGA processing</h2>
       <div class="grid">
         <div class="card">
-          <div class="mini-plot"><div class="peak"></div></div>
+          <div class="mini-plot" aria-hidden="true"><div class="peak"></div></div>
           <h3>Coincidence peak</h3>
           <p>Visualizes time-correlated event measurements and validation-style analysis.</p>
         </div>
         <div class="card">
-          <div class="mini-plot"><div class="pipeline"><span class="node">Inputs</span><span class="node">FPGA</span><span class="node">GUI/API</span></div></div>
+          <div class="mini-plot" aria-hidden="true"><div class="pipeline"><span class="node">Inputs</span><span class="node">FPGA</span><span class="node">GUI/API</span></div></div>
           <h3>Histogram pipeline</h3>
           <p>Real-time FPGA time histogram with minimum 1 ps bin width and multi-stop support.</p>
         </div>
         <div class="card">
-          <div class="mini-plot"><div class="pipeline"><span class="node">10 MHz TTL</span><span class="node">GPIO 2</span><span class="node">Sync</span></div></div>
+          <div class="mini-plot" aria-hidden="true"><div class="pipeline"><span class="node">10 MHz TTL</span><span class="node">GPIO 2</span><span class="node">Sync</span></div></div>
           <h3>External sync</h3>
           <p>External 10 MHz TTL synchronization support for coordinated instrument timing.</p>
         </div>
@@ -95,14 +95,16 @@
     <section class="section">
       <h2>Grouped specifications</h2>
       <table class="spec-table">
-        <tr><th>Model</th><td>Nexatom Universal Time Tagger, UTT_810 / UTT810</td></tr>
-        <tr><th>Channels</th><td>8 input channels</td></tr>
-        <tr><th>Timing</th><td>1 ps time bin width, &lt;10 ps timing jitter specification, 4 ns dead time</td></tr>
-        <tr><th>Processing</th><td>Time histogram, coincidence histogram, and correlation measurement with Real-time FPGA processing</td></tr>
-        <tr><th>Inputs</th><td>0 to 5 V input range, 0 to 2.5 V threshold in 1 mV steps, 1 mV to 100 mV hysteresis, 50 ohms impedance, 1 ps to 4 ns physical delay</td></tr>
-        <tr><th>Interface</th><td>USB 3 data transfer above 300 MB/s</td></tr>
-        <tr><th>Software</th><td>GUI and API with absolute time-tag saving</td></tr>
-        <tr><th>Synchronization</th><td>External 10 MHz TTL clock signal on GPIO pin 2. The GUI detects a valid clock when Use External Sync is enabled.</td></tr>
+        <tbody>
+          <tr><th scope="row">Model</th><td>Nexatom Universal Time Tagger, UTT_810 / UTT810</td></tr>
+          <tr><th scope="row">Channels</th><td>8 input channels</td></tr>
+          <tr><th scope="row">Timing</th><td>1 ps time bin width, &lt;10 ps timing jitter specification, 4 ns dead time</td></tr>
+          <tr><th scope="row">Processing</th><td>Time histogram, coincidence histogram, and correlation measurement with Real-time FPGA processing</td></tr>
+          <tr><th scope="row">Inputs</th><td>0 to 5 V input range, 0 to 2.5 V threshold in 1 mV steps, 1 mV to 100 mV hysteresis, 50 ohms impedance, 1 ps to 4 ns physical delay</td></tr>
+          <tr><th scope="row">Interface</th><td>USB 3 data transfer above 300 MB/s</td></tr>
+          <tr><th scope="row">Software</th><td>GUI and API with absolute time-tag saving</td></tr>
+          <tr><th scope="row">Synchronization</th><td>External 10 MHz TTL clock signal on GPIO pin 2. The GUI detects a valid clock when Use External Sync is enabled.</td></tr>
+        </tbody>
       </table>
     </section>
 
