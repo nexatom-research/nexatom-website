@@ -32,6 +32,20 @@ def main() -> None:
         if not (SITE / rel).exists():
             fail(f"missing site/{rel}")
 
+    html_files = sorted(SITE.rglob("*.html"))
+    for html in html_files:
+        text = html.read_text(encoding="utf-8")
+        if '<link rel="stylesheet" href="/assets/css/styles.css">' not in text:
+            fail(f"{html.relative_to(ROOT)} must load /assets/css/styles.css")
+        if 'href="products/' in text or 'href="downloads/' in text:
+            fail(f"{html.relative_to(ROOT)} contains depth-sensitive relative nav links")
+        if 'ghs.googlehosted.com' in text or 'drive.google.com' in text:
+            fail(f"{html.relative_to(ROOT)} contains old Google-hosted download/media link")
+        if '<header class="site-header">' not in text:
+            fail(f"{html.relative_to(ROOT)} missing shared header")
+        if '<footer class="site-footer">' not in text:
+            fail(f"{html.relative_to(ROOT)} missing shared footer")
+
     cname = (SITE / "CNAME").read_text(encoding="utf-8").strip()
     if cname != "www.nexatom.in":
         fail("site/CNAME must contain www.nexatom.in")
