@@ -1,5 +1,7 @@
 from pathlib import Path
+from html.parser import HTMLParser
 import sys
+from urllib.parse import urlparse
 
 ROOT = Path(__file__).resolve().parents[1]
 SITE = ROOT / "site"
@@ -8,6 +10,29 @@ SITE = ROOT / "site"
 def fail(message: str) -> None:
     print(f"FAIL: {message}")
     sys.exit(1)
+
+
+class LinkParser(HTMLParser):
+    def __init__(self) -> None:
+        super().__init__()
+        self.links: list[tuple[str, str]] = []
+
+    def handle_starttag(self, tag: str, attrs: list[tuple[str, str | None]]) -> None:
+        for name, value in attrs:
+            if name in {"href", "src"} and value:
+                self.links.append((name, value))
+
+
+def internal_target_exists(url: str) -> bool:
+    parsed = urlparse(url)
+    path = parsed.path
+    if not path.startswith("/"):
+        return False
+    if path == "/":
+        return (SITE / "index.html").exists()
+    if path.endswith("/"):
+        return (SITE / path.lstrip("/") / "index.html").exists()
+    return (SITE / path.lstrip("/")).exists()
 
 
 def main() -> None:
@@ -49,6 +74,22 @@ def main() -> None:
             fail(f"{html.relative_to(ROOT)} missing shared footer")
         if '<main class="page">' not in text:
             fail(f"{html.relative_to(ROOT)} missing page wrapper")
+        if '<meta name="description"' not in text:
+            fail(f"{html.relative_to(ROOT)} missing meta description")
+        if "<title>" not in text:
+            fail(f"{html.relative_to(ROOT)} missing title")
+
+        parser = LinkParser()
+        parser.feed(text)
+        for attr, value in parser.links:
+            if value.startswith(("#", "mailto:", "tel:")):
+                continue
+            if value.startswith(("http://", "https://")):
+                continue
+            if not value.startswith("/"):
+                fail(f"{html.relative_to(ROOT)} has non-root-relative {attr}: {value}")
+            if not internal_target_exists(value):
+                fail(f"{html.relative_to(ROOT)} points to missing internal target: {value}")
 
     home = (SITE / "index.html").read_text(encoding="utf-8")
     for phrase in [
@@ -114,6 +155,24 @@ def main() -> None:
         for phrase in phrases:
             if phrase not in text:
                 fail(f"site/{rel} missing phrase: {phrase}")
+
+    all_text = "\n".join(path.read_text(encoding="utf-8", errors="ignore") for path in SITE.rglob("*") if path.is_file())
+    if "Click to Downlaod" in all_text or "Click to Download Software for Nexatom UTT 810" in all_text:
+        fail("old Google Sites download copy remains")
+    if "https://drive.google.com" in all_text:
+        fail("Google Drive URL remains in production site")
+    if 'href="https://www.linkedin.com/"' in all_text:
+        fail("generic LinkedIn homepage URL remains")
+
+    required_external = [
+        "https://github.com/nexatom-research/nexatom-downloads/releases/download/time-tagger-UTT810-v1.0.1/Nexatom_UTT810_Setup_1.0.1.exe",
+        "https://github.com/nexatom-research/nexatom-downloads/releases/tag/time-tagger-UTT810-v1.0.1",
+        "https://downloads.nexatom.in/apps/time-tagger/UTT810/latest.json",
+        "https://in.linkedin.com/in/subodhvashist",
+    ]
+    for url in required_external:
+        if url not in all_text:
+            fail(f"missing required external URL: {url}")
 
     cname = (SITE / "CNAME").read_text(encoding="utf-8").strip()
     if cname != "www.nexatom.in":
