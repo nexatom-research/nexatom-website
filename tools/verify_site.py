@@ -65,6 +65,27 @@ def main() -> None:
         if phrase not in home:
             fail(f"homepage missing phrase: {phrase}")
 
+    product = (SITE / "products/utt810/index.html").read_text(encoding="utf-8")
+    for phrase in [
+        "Nexatom UTT810 Universal Time Tagger",
+        "8 input channels",
+        "1 ps time bin width",
+        "&lt;10 ps",
+        "4 ns dead time",
+        "USB 3 data transfer",
+        "Real-time FPGA",
+        "External 10 MHz TTL",
+        "minimum 8 ns bin width",
+        "1 ps to 4 ns physical delay",
+        "Use External Sync",
+        "Quantum optics",
+        "Spectroscopy",
+        "Multi-channel event timing",
+        "24.5 ps FWHM / 10.5 ps RMS",
+    ]:
+        if phrase not in product:
+            fail(f"product page missing phrase: {phrase}")
+
     cname = (SITE / "CNAME").read_text(encoding="utf-8").strip()
     if cname != "www.nexatom.in":
         fail("site/CNAME must contain www.nexatom.in")
