@@ -45,6 +45,8 @@ def main() -> None:
             fail(f"{html.relative_to(ROOT)} missing shared header")
         if '<footer class="site-footer">' not in text:
             fail(f"{html.relative_to(ROOT)} missing shared footer")
+        if '<main class="page">' not in text:
+            fail(f"{html.relative_to(ROOT)} missing page wrapper")
 
     cname = (SITE / "CNAME").read_text(encoding="utf-8").strip()
     if cname != "www.nexatom.in":
