@@ -58,7 +58,7 @@ def main() -> None:
         "Problem and Solution",
         "A Closer Look",
         "Achievements",
-        "Press coverage",
+        "Press Coverage",
         "Subodh Vashist",
         "nexatom.research@gmail.com",
     ]:
