@@ -166,7 +166,7 @@ Recommended page flow:
 1. Product hero:
    - `Nexatom UTT810 Universal Time Tagger`
    - One-line positioning: an 8-channel USB time tagger for coincidence, histogram, correlation, and synchronized event-timing measurements.
-   - CTAs: `Download Software`, `Contact Nexatom`, and optionally `View Specifications`.
+   - CTAs: `Download Software`, `Contact Nexatom`, and `View Specifications`.
 2. Metric highlights:
    - 8 input channels.
    - 1 ps time bin width.
@@ -347,10 +347,12 @@ Production should not depend on the temporary `.superpowers/` companion files.
 
 ## Deployment
 
-Use GitHub Pages "Deploy from branch":
+Use GitHub Pages with GitHub Actions publishing from a dedicated `site/` directory. This intentionally chooses the publication-boundary option that keeps `docs/`, `mockups/`, `.superpowers/`, and local PDFs out of the public Pages artifact.
 
-- Branch: `main`
-- Folder: `/`
+Repository Pages settings must use:
+
+- Source: `GitHub Actions`
+- Artifact path uploaded by workflow: `site/`
 
 Add:
 
@@ -359,11 +361,14 @@ Add:
 
 Deployment acceptance checks:
 
+- GitHub repository Pages source is set to `GitHub Actions`, not `Deploy from branch`.
+- Latest Pages workflow run deployed the `site/` artifact successfully.
 - `www.nexatom.in` resolves to GitHub Pages after DNS is changed.
 - HTTPS is enabled after DNS settles.
 - `downloads.nexatom.in/apps/time-tagger/UTT810/latest.json` remains unchanged and reachable.
 - Apex `nexatom.in` behavior is deliberately chosen: either GitHub Pages apex support or a deliberate redirect/parking choice.
 - No wildcard DNS such as `*.nexatom.in` is configured.
+- Public URLs such as `/docs/`, `/mockups/`, and root-level PDF names return 404 after launch.
 
 DNS changes are outside code and must be done deliberately by the user. Do not modify DNS from this repository.
 
