@@ -100,6 +100,19 @@ def main() -> None:
         if phrase not in download:
             fail(f"download page missing phrase: {phrase}")
 
+    page_checks = {
+        "achievements/index.html": ["precision laser system", "Raman Research Institute", "quantum and spectroscopy"],
+        "press/index.html": ["DST", "Times of India", "Deccan Herald", "trademarks"],
+        "team/index.html": ["highly talented and tenacious researchers", "coalition of ideas"],
+        "contact/index.html": ["nexatom.research@gmail.com", "+91 8884998660", "LinkedIn"],
+        "404.html": ["Page not found", "Return home"],
+    }
+    for rel, phrases in page_checks.items():
+        text = (SITE / rel).read_text(encoding="utf-8")
+        for phrase in phrases:
+            if phrase not in text:
+                fail(f"site/{rel} missing phrase: {phrase}")
+
     cname = (SITE / "CNAME").read_text(encoding="utf-8").strip()
     if cname != "www.nexatom.in":
         fail("site/CNAME must contain www.nexatom.in")
