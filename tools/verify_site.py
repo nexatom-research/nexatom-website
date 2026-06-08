@@ -48,6 +48,23 @@ def main() -> None:
         if '<main class="page">' not in text:
             fail(f"{html.relative_to(ROOT)} missing page wrapper")
 
+    home = (SITE / "index.html").read_text(encoding="utf-8")
+    for phrase in [
+        "Indigenous precision laser sources and scientific instruments",
+        "Let's build together",
+        "Explore UTT810",
+        "Download Software",
+        "Nexatom UTT810 Universal Time Tagger",
+        "Problem and Solution",
+        "A Closer Look",
+        "Achievements",
+        "Press coverage",
+        "Subodh Vashist",
+        "nexatom.research@gmail.com",
+    ]:
+        if phrase not in home:
+            fail(f"homepage missing phrase: {phrase}")
+
     cname = (SITE / "CNAME").read_text(encoding="utf-8").strip()
     if cname != "www.nexatom.in":
         fail("site/CNAME must contain www.nexatom.in")
