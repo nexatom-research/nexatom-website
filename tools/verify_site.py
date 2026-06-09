@@ -45,6 +45,17 @@ def internal_target_exists(html: Path, url: str) -> bool:
 
 
 def main() -> None:
+    active_nav = {
+        "index.html": "Home",
+        "products/index.html": "Products",
+        "products/utt810/index.html": "Products",
+        "downloads/index.html": "Downloads",
+        "downloads/utt810/index.html": "Downloads",
+        "achievements/index.html": "Achievements",
+        "press/index.html": "Press",
+        "team/index.html": "Team",
+        "contact/index.html": "Contact",
+    }
     required = [
         "index.html",
         "products/index.html",
@@ -96,6 +107,19 @@ def main() -> None:
             fail(f"{html.relative_to(ROOT)} missing meta description")
         if "<title>" not in text:
             fail(f"{html.relative_to(ROOT)} missing title")
+        rel_html = html.relative_to(SITE).as_posix()
+        current_count = text.count('aria-current="page"')
+        if rel_html == "404.html":
+            if current_count:
+                fail("site/404.html should not mark a current nav item")
+        else:
+            expected_current = active_nav.get(rel_html)
+            if not expected_current:
+                fail(f"{html.relative_to(ROOT)} missing active nav expectation")
+            if current_count != 1:
+                fail(f"{html.relative_to(ROOT)} must have exactly one current nav item")
+            if f'aria-current="page">{expected_current}</a>' not in text:
+                fail(f"{html.relative_to(ROOT)} must mark {expected_current} as current nav item")
 
         parser = LinkParser()
         parser.feed(text)
