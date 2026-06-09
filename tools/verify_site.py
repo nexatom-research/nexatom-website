@@ -61,7 +61,7 @@ def main() -> None:
         ".nojekyll",
         "assets/css/styles.css",
         "assets/images/nexatom-lockup.png",
-        "assets/images/nexatom-favicon.png",
+        "assets/images/nexatom-favicon-filled.png",
         "assets/images/nexatom-mark.png",
     ]
     for rel in required:
@@ -75,7 +75,7 @@ def main() -> None:
             fail(f"{html.relative_to(ROOT)} must load assets/css/styles.css")
         if 'assets/images/nexatom-lockup.png' not in text:
             fail(f"{html.relative_to(ROOT)} must use the Nexatom header logo")
-        if 'assets/images/nexatom-favicon.png' not in text:
+        if 'assets/images/nexatom-favicon-filled.png' not in text:
             fail(f"{html.relative_to(ROOT)} must load the Nexatom favicon mark")
         if '>nexAtom</a>' in text:
             fail(f"{html.relative_to(ROOT)} still uses text-only header branding")
