@@ -40,9 +40,24 @@ a { color: var(--cyan); }
 }
 
 .brand {
-  color: var(--ink);
-  font-weight: 700;
+  flex: 0 0 auto;
+  display: inline-flex;
+  align-items: center;
   text-decoration: none;
+}
+
+.brand-logo {
+  display: block;
+  width: auto;
+  height: 52px;
+  max-width: min(216px, 72vw);
+}
+
+.brand:focus-visible,
+.site-nav a:focus-visible,
+.button:focus-visible {
+  outline: 2px solid var(--cyan);
+  outline-offset: 4px;
 }
 
 .site-nav {
@@ -319,6 +334,11 @@ code {
   .site-header {
     align-items: flex-start;
     flex-direction: column;
+  }
+
+  .brand-logo {
+    height: 48px;
+    max-width: 74vw;
   }
 
   .hero {
