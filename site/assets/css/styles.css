@@ -69,11 +69,29 @@ a { color: var(--cyan); }
 }
 
 .site-nav a {
+  position: relative;
   color: var(--muted);
+  font-weight: 600;
   text-decoration: none;
 }
 
 .site-nav a:hover { color: var(--cyan); }
+
+.site-nav a[aria-current="page"] {
+  color: var(--ink);
+  font-weight: 700;
+}
+
+.site-nav a[aria-current="page"]::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -7px;
+  height: 2px;
+  border-radius: 999px;
+  background: var(--cyan);
+}
 
 .page {
   max-width: 1160px;
