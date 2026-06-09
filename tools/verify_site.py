@@ -60,6 +60,8 @@ def main() -> None:
         "sitemap.xml",
         ".nojekyll",
         "assets/css/styles.css",
+        "assets/images/nexatom-lockup.png",
+        "assets/images/nexatom-mark.png",
     ]
     for rel in required:
         if not (SITE / rel).exists():
@@ -70,6 +72,12 @@ def main() -> None:
         text = html.read_text(encoding="utf-8")
         if 'assets/css/styles.css' not in text:
             fail(f"{html.relative_to(ROOT)} must load assets/css/styles.css")
+        if 'assets/images/nexatom-lockup.png' not in text:
+            fail(f"{html.relative_to(ROOT)} must use the Nexatom header logo")
+        if 'assets/images/nexatom-mark.png' not in text:
+            fail(f"{html.relative_to(ROOT)} must load the Nexatom favicon mark")
+        if '>nexAtom</a>' in text:
+            fail(f"{html.relative_to(ROOT)} still uses text-only header branding")
         if 'href="products/' in text or 'href="downloads/' in text:
             if html.parent != SITE:
                 fail(f"{html.relative_to(ROOT)} contains depth-sensitive relative nav links")
