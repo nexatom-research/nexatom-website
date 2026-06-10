@@ -135,8 +135,15 @@ def main() -> None:
 
     home = (SITE / "index.html").read_text(encoding="utf-8")
     for phrase in [
-        "Indigenous precision laser sources and scientific instruments",
+        "Precision laser systems, time taggers, and scientific instruments",
         "Let's build together",
+        "Explore Products",
+        "Discuss an Instrument",
+        "Product areas",
+        "Precision laser systems",
+        "Universal time taggers",
+        "Custom scientific instrumentation",
+        "Featured product",
         "Explore UTT810",
         "Download Software",
         "Nexatom UTT810 Universal Time Tagger",
