@@ -99,6 +99,10 @@ a { color: var(--cyan); }
   padding: 40px 24px 72px;
 }
 
+main.page:has(.product-hero-large) {
+  max-width: 1320px;
+}
+
 .section {
   padding: 52px 0;
   border-bottom: 1px solid var(--line);
@@ -115,6 +119,26 @@ a { color: var(--cyan); }
 }
 
 .hero.compact { min-height: 320px; }
+
+.product-hero-large {
+  grid-template-columns: 1fr;
+  gap: 30px;
+  align-items: start;
+  min-height: auto;
+  padding: 48px 0 28px;
+}
+
+.product-hero-copy {
+  max-width: 860px;
+}
+
+.hero-product-visual {
+  width: 100%;
+}
+
+.hero-product-visual img {
+  border-radius: 7px;
+}
 
 .eyebrow {
   margin-bottom: 10px;
@@ -254,6 +278,36 @@ p {
   margin-bottom: 16px;
 }
 
+.media-card img.contain-image {
+  object-fit: contain;
+}
+
+.detail-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 16px;
+  margin-top: 22px;
+}
+
+.detail-card-wide {
+  grid-column: 1 / -1;
+}
+
+.detail-card img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  background: #fff;
+  margin-bottom: 16px;
+}
+
+.detail-card img.contain-image {
+  max-height: 420px;
+  object-fit: contain;
+}
+
 .text-link {
   display: inline-flex;
   margin-top: 4px;
@@ -316,7 +370,7 @@ p {
 .home-hero-visuals {
   display: grid;
   grid-template-columns: minmax(0, 1fr);
-  gap: 18px;
+  gap: 14px;
   justify-self: stretch;
 }
 
@@ -336,9 +390,9 @@ p {
 }
 
 .home-hero-tagger {
-  width: 76%;
-  justify-self: end;
-  margin-right: 4%;
+  width: 100%;
+  justify-self: stretch;
+  margin-right: 0;
 }
 
 .split-section {
@@ -362,10 +416,40 @@ p {
   font-size: 13px;
 }
 
+.contact-panel {
+  display: grid;
+  grid-template-columns: minmax(240px, 0.8fr) minmax(0, 1.2fr);
+  gap: 36px;
+  align-items: center;
+}
+
+.contact-lockup {
+  margin: 0;
+}
+
 .contact-lockup img {
-  max-width: 420px;
-  padding: 24px;
-  object-fit: contain;
+  display: block;
+  width: min(420px, 100%);
+  height: auto;
+}
+
+.contact-methods {
+  display: grid;
+  gap: 22px;
+}
+
+.contact-methods h2 {
+  margin-bottom: 4px;
+  font-size: 20px;
+}
+
+.contact-methods p {
+  margin-bottom: 0;
+}
+
+.note {
+  margin-top: 28px;
+  font-size: 14px;
 }
 
 .video-panel {
@@ -632,8 +716,14 @@ code {
   .grid,
   .grid.four,
   .grid.two,
+  .contact-panel,
+  .detail-grid,
   .split-section {
     grid-template-columns: 1fr;
+  }
+
+  .detail-card-wide {
+    grid-column: auto;
   }
 
   .home-hero {
