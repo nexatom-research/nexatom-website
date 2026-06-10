@@ -178,11 +178,125 @@ p {
   grid-template-columns: repeat(4, minmax(0, 1fr));
 }
 
+.grid.two {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
 .card, .metric, .download-panel {
   border: 1px solid var(--line);
   border-radius: 7px;
   background: var(--soft);
   padding: 22px;
+}
+
+.media-card img,
+.product-visual img,
+.image-tile img,
+.plot-image {
+  display: block;
+  width: 100%;
+  height: auto;
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  background: #fff;
+}
+
+.media-card img {
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  margin-bottom: 16px;
+}
+
+.text-link {
+  display: inline-flex;
+  margin-top: 4px;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.text-link:hover { text-decoration: underline; }
+
+.product-visual {
+  margin: 0;
+}
+
+.product-visual img {
+  box-shadow: 0 22px 42px rgba(20, 33, 41, 0.12);
+}
+
+.product-visual.narrow {
+  max-width: 760px;
+  margin-top: 22px;
+}
+
+.hero-product-panel {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 16px;
+}
+
+.hero-product {
+  margin: 0;
+}
+
+.hero-product img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border: 1px solid var(--line);
+  border-radius: 7px;
+  background: #fff;
+  box-shadow: 0 22px 42px rgba(20, 33, 41, 0.12);
+}
+
+.hero-product.primary img {
+  aspect-ratio: auto;
+  object-fit: contain;
+}
+
+.hero-product.secondary {
+  max-width: 72%;
+  justify-self: end;
+  margin-top: -58px;
+}
+
+.hero-product.secondary img {
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+}
+
+.hero-product figcaption {
+  margin-top: 8px;
+  color: var(--muted);
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.split-section {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(300px, 0.9fr);
+  gap: 36px;
+  align-items: center;
+}
+
+.image-tile {
+  margin: 0;
+  border: 1px solid var(--line);
+  border-radius: 7px;
+  background: var(--soft);
+  padding: 14px;
+}
+
+.image-tile figcaption {
+  margin-top: 10px;
+  color: var(--muted);
+  font-size: 13px;
+}
+
+.plot-image {
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+  margin-bottom: 12px;
 }
 
 .metric strong {
@@ -369,7 +483,15 @@ code {
   h2 { font-size: 25px; }
 
   .grid,
-  .grid.four {
+  .grid.four,
+  .grid.two,
+  .split-section {
     grid-template-columns: 1fr;
+  }
+
+  .hero-product.secondary {
+    max-width: 100%;
+    justify-self: stretch;
+    margin-top: 0;
   }
 }

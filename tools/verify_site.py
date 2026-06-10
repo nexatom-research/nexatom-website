@@ -48,7 +48,11 @@ def main() -> None:
     active_nav = {
         "index.html": "Home",
         "products/index.html": "Products",
-        "products/utt810/index.html": "Products",
+        "products/laser-systems/index.html": "Products",
+        "products/time-taggers/index.html": "Products",
+        "products/time-taggers/utt810/index.html": "Products",
+        "products/time-taggers/utt-16in-8out/index.html": "Products",
+        "products/time-taggers/utt32/index.html": "Products",
         "downloads/index.html": "Downloads",
         "downloads/utt810/index.html": "Downloads",
         "achievements/index.html": "Achievements",
@@ -59,7 +63,11 @@ def main() -> None:
     required = [
         "index.html",
         "products/index.html",
-        "products/utt810/index.html",
+        "products/laser-systems/index.html",
+        "products/time-taggers/index.html",
+        "products/time-taggers/utt810/index.html",
+        "products/time-taggers/utt-16in-8out/index.html",
+        "products/time-taggers/utt32/index.html",
         "downloads/index.html",
         "downloads/utt810/index.html",
         "achievements/index.html",
@@ -74,6 +82,16 @@ def main() -> None:
         "assets/images/nexatom-lockup.png",
         "assets/images/nexatom-favicon-filled.png",
         "assets/images/nexatom-mark.png",
+        "assets/images/laser-systems/ecdl-mount.png",
+        "assets/images/laser-systems/ecdl-gui-rpi3.png",
+        "assets/images/laser-systems/new-controller-sas.png",
+        "assets/images/time-taggers/utt810-product.jpg",
+        "assets/images/time-taggers/utt810-working-setup.jpg",
+        "assets/images/time-taggers/tt-accuracy-histogram.jpg",
+        "assets/images/time-taggers/tt-16-8-top.jpg",
+        "assets/images/time-taggers/tt-16-8-bottom.jpg",
+        "assets/images/time-taggers/tt-32-top.jpg",
+        "assets/images/time-taggers/tt-32-bottom.jpg",
     ]
     for rel in required:
         if not (SITE / rel).exists():
@@ -141,12 +159,18 @@ def main() -> None:
         "Discuss an Instrument",
         "Product areas",
         "Precision laser systems",
+        "Laser control interface",
+        "View laser systems",
         "Universal time taggers",
         "Custom scientific instrumentation",
-        "Featured product",
+        "Featured product family",
+        "Nexatom Universal Time Taggers",
+        "UTT_810 / UTT810",
+        "16-in / 8-out custom board",
+        "32-channel time tagger board",
+        "Explore Time Taggers",
         "Explore UTT810",
         "Download Software",
-        "Nexatom UTT810 Universal Time Tagger",
         "Problem and Solution",
         "A Closer Look",
         "Achievements",
@@ -157,9 +181,49 @@ def main() -> None:
         if phrase not in home:
             fail(f"homepage missing phrase: {phrase}")
 
-    product = (SITE / "products/utt810/index.html").read_text(encoding="utf-8")
+    products = (SITE / "products/index.html").read_text(encoding="utf-8")
     for phrase in [
-        "Nexatom UTT810 Universal Time Tagger",
+        "Nexatom products",
+        "Precision laser systems",
+        "External-cavity diode laser mount hardware",
+        "View laser systems",
+        "Universal time taggers",
+        "Nexatom Universal Time Taggers",
+        "16-in / 8-out custom board",
+        "32-channel time tagger board",
+        "View time taggers",
+    ]:
+        if phrase not in products:
+            fail(f"products index missing phrase: {phrase}")
+
+    lasers = (SITE / "products/laser-systems/index.html").read_text(encoding="utf-8")
+    for phrase in [
+        "Precision laser systems",
+        "Laser hardware with laboratory control interfaces",
+        "External-cavity diode laser hardware",
+        "Laser control interface for laboratory operation",
+        "Quantum optics",
+        "Spectroscopy",
+        "Custom integration",
+    ]:
+        if phrase not in lasers:
+            fail(f"laser systems page missing phrase: {phrase}")
+
+    family = (SITE / "products/time-taggers/index.html").read_text(encoding="utf-8")
+    for phrase in [
+        "Nexatom Universal Time Taggers",
+        "Time-tagging hardware platforms",
+        "UTT_810 / UTT810",
+        "16-in / 8-out custom board",
+        "32-channel time tagger board",
+        "24.5 ps FWHM / 10.5 ps RMS",
+    ]:
+        if phrase not in family:
+            fail(f"time tagger family page missing phrase: {phrase}")
+
+    product = (SITE / "products/time-taggers/utt810/index.html").read_text(encoding="utf-8")
+    for phrase in [
+        "Nexatom UTT_810 / UTT810 Universal Time Tagger",
         "8 input channels",
         "1 ps time bin width",
         "&lt;10 ps",
@@ -173,10 +237,33 @@ def main() -> None:
         "Quantum optics",
         "Spectroscopy",
         "Multi-channel event timing",
+        "combined coincidence peak of approximately 49 ps FWHM / 20.81 ps RMS",
         "24.5 ps FWHM / 10.5 ps RMS",
+        "Measured performance",
     ]:
         if phrase not in product:
             fail(f"product page missing phrase: {phrase}")
+
+    board_16 = (SITE / "products/time-taggers/utt-16in-8out/index.html").read_text(encoding="utf-8")
+    for phrase in [
+        "16-in / 8-out custom time tagger board",
+        "Hardware overview",
+        "Configuration",
+        "Custom time-tagging hardware configuration",
+    ]:
+        if phrase not in board_16:
+            fail(f"16-in / 8-out board page missing phrase: {phrase}")
+
+    board_32 = (SITE / "products/time-taggers/utt32/index.html").read_text(encoding="utf-8")
+    for phrase in [
+        "32-channel time tagger board",
+        "32-channel, 10 ps class",
+        "Hardware overview",
+        "Configuration",
+        "Custom high-channel-count time-tagging hardware configuration",
+    ]:
+        if phrase not in board_32:
+            fail(f"32-channel board page missing phrase: {phrase}")
 
     download = (SITE / "downloads/utt810/index.html").read_text(encoding="utf-8")
     for phrase in [
@@ -193,7 +280,7 @@ def main() -> None:
             fail(f"download page missing phrase: {phrase}")
 
     page_checks = {
-        "achievements/index.html": ["precision laser system", "Raman Research Institute", "quantum and spectroscopy"],
+        "achievements/index.html": ["precision laser system", "Raman Research Institute", "quantum and spectroscopy", "External-cavity diode laser hardware", "Laser control interface"],
         "press/index.html": ["DST", "Times of India", "Deccan Herald", "trademarks"],
         "team/index.html": ["highly talented and tenacious researchers", "coalition of ideas"],
         "contact/index.html": ["nexatom.research@gmail.com", "+91 8884998660", "LinkedIn"],

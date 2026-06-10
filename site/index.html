@@ -13,8 +13,8 @@
     <a class="brand" href="./" aria-label="Nexatom Research &amp; Instruments home"><img class="brand-logo" src="assets/images/nexatom-lockup.png" alt="Nexatom Research &amp; Instruments"></a>
     <nav class="site-nav" aria-label="Primary navigation">
       <a href="./" aria-current="page">Home</a>
-      <a href="products/utt810/">Products</a>
-      <a href="downloads/utt810/">Downloads</a>
+      <a href="products/">Products</a>
+      <a href="downloads/">Downloads</a>
       <a href="achievements/">Achievements</a>
       <a href="press/">Press</a>
       <a href="team/">Team</a>
@@ -29,21 +29,19 @@
         <p><strong>Let's build together.</strong></p>
         <p>nexAtom mobilizes research knowledge into practical high-technology instruments for research, industry, and quantum-enabled laboratories.</p>
         <div class="actions">
-          <a class="button" href="products/utt810/">Explore Products</a>
+          <a class="button" href="products/">Explore Products</a>
           <a class="button secondary" href="contact/">Discuss an Instrument</a>
         </div>
       </div>
-      <div class="instrument" role="img" aria-label="Nexatom precision instrumentation visual">
-        <div class="instrument-top"><strong>NEXATOM INSTRUMENTATION</strong><span>Laser | Timing | Control</span></div>
-        <div class="screen">
-          <div class="trace one"><span class="pulse" style="left:12%"></span><span class="pulse" style="left:47%"></span><span class="pulse" style="left:81%"></span></div>
-          <div class="trace two"><span class="pulse gold" style="left:24%"></span><span class="pulse gold" style="left:53%"></span></div>
-          <div class="trace three"><span class="pulse red" style="left:36%"></span><span class="pulse red" style="left:72%"></span></div>
-        </div>
-        <div class="ports">
-          <span class="port">LAS</span><span class="port">TAG</span><span class="port">FPGA</span><span class="port">SYNC</span>
-          <span class="port">CTRL</span><span class="port">DAQ</span><span class="port">RF</span><span class="port">OEM</span>
-        </div>
+      <div class="hero-product-panel" aria-label="Nexatom laser and time-tagger product images">
+        <figure class="hero-product primary">
+          <img src="assets/images/laser-systems/ecdl-gui-rpi3.png" alt="Nexatom laser control interface running on Raspberry Pi">
+          <figcaption>Laser control interface</figcaption>
+        </figure>
+        <figure class="hero-product secondary">
+          <img src="assets/images/time-taggers/utt810-product.jpg" alt="Nexatom UTT 810 time tagger hardware and software">
+          <figcaption>UTT_810 time tagger</figcaption>
+        </figure>
       </div>
     </section>
 
@@ -52,13 +50,16 @@
       <h2>Built around precision light, timing, and control</h2>
       <p>Nexatom works across laser systems, time-tagging electronics, and custom scientific instruments where laboratory requirements need practical engineering.</p>
       <div class="grid">
-        <div class="card">
+        <div class="card media-card">
+          <img src="assets/images/laser-systems/ecdl-mount.png" alt="External-cavity diode laser mount hardware">
           <h3>Precision laser systems</h3>
           <p>Tunable and application-specific laser sources for quantum optics, spectroscopy, and laboratory instrumentation.</p>
+          <a class="text-link" href="products/laser-systems/">View laser systems</a>
         </div>
         <div class="card">
           <h3>Universal time taggers</h3>
           <p>Multi-channel event timing hardware and software for coincidence, histogram, correlation, and synchronized measurements.</p>
+          <a class="text-link" href="products/time-taggers/">View time taggers</a>
         </div>
         <div class="card">
           <h3>Custom scientific instrumentation</h3>
@@ -79,21 +80,33 @@
 
     <section class="section">
       <h2>Our Portfolio</h2>
-      <p>Current work spans precision laser systems, tunable laser solutions, custom scientific instrumentation, and the UTT810 Universal Time Tagger.</p>
+      <p>Current work spans precision laser systems, tunable laser solutions, custom scientific instrumentation, and Nexatom Universal Time Taggers including UTT_810 / UTT810 and custom high-channel-count boards.</p>
     </section>
 
     <section class="section">
-      <div class="eyebrow">Featured product</div>
-      <h2>Nexatom UTT810 Universal Time Tagger</h2>
-      <p>An 8-channel USB time tagger for coincidence, histogram, correlation, and synchronized event-timing measurements.</p>
-      <div class="grid four">
-        <div class="metric"><strong>8</strong>input channels</div>
-        <div class="metric"><strong>1 ps</strong>time bin width</div>
-        <div class="metric"><strong>&lt;10 ps</strong>timing jitter specification</div>
-        <div class="metric"><strong>USB 3</strong>&gt;300 MB/s data transfer</div>
+      <div class="eyebrow">Featured product family</div>
+      <h2>Nexatom Universal Time Taggers</h2>
+      <p>Time-tagging hardware for 8-channel, 16-in / 8-out, and 32-channel timing workflows, with UTT_810 / UTT810 as the release-backed public product path.</p>
+      <div class="grid">
+        <div class="card media-card">
+          <img src="assets/images/time-taggers/utt810-product.jpg" alt="Nexatom UTT 810 time tagger hardware, packaging, and software screens">
+          <h3>UTT_810 / UTT810</h3>
+          <p>8-channel, 10 ps class universal time tagger with public Windows software download.</p>
+        </div>
+        <div class="card media-card">
+          <img src="assets/images/time-taggers/tt-16-8-top.jpg" alt="Top side of a Nexatom time tagger engineering board with electronics and cooling fan">
+          <h3>16-in / 8-out custom board</h3>
+          <p>Nexatom-designed custom board for multi-channel timing and output workflows.</p>
+        </div>
+        <div class="card media-card">
+          <img src="assets/images/time-taggers/tt-32-top.jpg" alt="Top side of a high-channel-count Nexatom time tagger board with repeated channel electronics">
+          <h3>32-channel time tagger board</h3>
+          <p>32-channel, 10 ps class board for high-channel-count timing requirements.</p>
+        </div>
       </div>
       <div class="actions">
-        <a class="button" href="products/utt810/">Explore UTT810</a>
+        <a class="button" href="products/time-taggers/">Explore Time Taggers</a>
+        <a class="button secondary" href="products/time-taggers/utt810/">Explore UTT810</a>
         <a class="button secondary" href="downloads/utt810/">Download Software</a>
       </div>
     </section>
