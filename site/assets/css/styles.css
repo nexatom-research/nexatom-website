@@ -149,6 +149,32 @@ main.page:has(.product-hero-large) {
   text-transform: uppercase;
 }
 
+.breadcrumb {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  align-items: center;
+  margin-bottom: 18px;
+  color: var(--muted);
+  font-size: 13px;
+}
+
+.breadcrumb a {
+  color: var(--muted);
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.breadcrumb a:hover {
+  color: var(--cyan);
+  text-decoration: underline;
+}
+
+.breadcrumb span:last-child {
+  color: var(--ink);
+  font-weight: 700;
+}
+
 h1, h2, h3 {
   margin: 0 0 14px;
   line-height: 1.14;
@@ -688,10 +714,33 @@ code {
 .site-footer-inner {
   max-width: 1160px;
   margin: 0 auto;
-  display: flex;
-  justify-content: space-between;
+  display: grid;
+  grid-template-columns: minmax(220px, 1fr) auto;
   gap: 20px;
+  align-items: start;
+}
+
+.footer-links {
+  display: flex;
+  gap: 14px;
   flex-wrap: wrap;
+  justify-content: flex-end;
+}
+
+.footer-links a {
+  color: var(--muted);
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.footer-links a:hover {
+  color: var(--cyan);
+  text-decoration: underline;
+}
+
+.footer-contact {
+  display: block;
+  margin-top: 6px;
 }
 
 @media (max-width: 860px) {
@@ -753,5 +802,13 @@ code {
   .home-hero-tagger {
     width: 100%;
     margin: 0;
+  }
+
+  .site-footer-inner {
+    grid-template-columns: 1fr;
+  }
+
+  .footer-links {
+    justify-content: flex-start;
   }
 }

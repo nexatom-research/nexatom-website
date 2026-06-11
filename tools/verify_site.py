@@ -149,6 +149,9 @@ def main() -> None:
             "../assets/images/current-site/license-agreement-group.jpg",
             "../assets/images/current-site/license-agreement-signing.jpg",
         },
+        "team/index.html": {
+            "../assets/images/current-site/team-overview.png",
+        },
     }
     seen_expandable_images: dict[str, set[str]] = {}
 
@@ -307,7 +310,7 @@ def main() -> None:
     for phrase in [
         "Nexatom Universal Time Taggers",
         "Time-tagging hardware platforms",
-        "UTT_810 / UTT810",
+        "UTT810 is the standard 8-channel model",
         "16-in / 8-out custom board",
         "32-channel time tagger board",
         "24.5 ps FWHM / 10.5 ps RMS",
@@ -317,7 +320,8 @@ def main() -> None:
 
     product = (SITE / "products/time-taggers/utt810/index.html").read_text(encoding="utf-8")
     for phrase in [
-        "Nexatom UTT_810 / UTT810 Universal Time Tagger",
+        "Nexatom UTT810 Universal Time Tagger",
+        "Also referred to as UTT_810",
         "8 input channels",
         "1 ps time bin width",
         "&lt;10 ps",
