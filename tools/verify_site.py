@@ -334,6 +334,8 @@ def main() -> None:
         "Use External Sync",
         "Quantum optics",
         "Spectroscopy",
+        "FCS, DLS, and DCS",
+        "Biology and biophysics",
         "Multi-channel event timing",
         "combined coincidence peak of approximately 49 ps FWHM / 20.81 ps RMS",
         "24.5 ps FWHM / 10.5 ps RMS",
