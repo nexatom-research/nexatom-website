@@ -310,7 +310,7 @@ def main() -> None:
     for phrase in [
         "Nexatom Universal Time Taggers",
         "Time-tagging hardware platforms",
-        "UTT810 is the standard 8-channel model",
+        "UTT810 is the 8-channel model",
         "16-in / 8-out custom board",
         "32-channel time tagger board",
         "24.5 ps FWHM / 10.5 ps RMS",
@@ -321,7 +321,6 @@ def main() -> None:
     product = (SITE / "products/time-taggers/utt810/index.html").read_text(encoding="utf-8")
     for phrase in [
         "Nexatom UTT810 Universal Time Tagger",
-        "Also referred to as UTT_810",
         "8 input channels",
         "1 ps time bin width",
         "&lt;10 ps",
@@ -349,7 +348,7 @@ def main() -> None:
         "16-in / 8-out custom time tagger board",
         "Hardware overview",
         "Configuration",
-        "Custom time-tagging hardware configuration",
+        "Custom board for 16-input, 8-output timing systems",
     ]:
         if phrase not in board_16:
             fail(f"16-in / 8-out board page missing phrase: {phrase}")
@@ -360,7 +359,7 @@ def main() -> None:
         "32-channel, 10 ps class",
         "Hardware overview",
         "Configuration",
-        "Custom high-channel-count time-tagging hardware configuration",
+        "Custom board for high-channel-count timing systems",
     ]:
         if phrase not in board_32:
             fail(f"32-channel board page missing phrase: {phrase}")
@@ -381,8 +380,8 @@ def main() -> None:
 
     page_checks = {
         "achievements/index.html": ["Research-led instrumentation milestones", "Raman Research Institute", "quantum and spectroscopy", "License agreement signing"],
-        "press/index.html": ["DST", "Times of India", "Deccan Herald", "press-dst.jpg", "press-times-of-india.jpg", "press-deccan-herald.png", "trademarks"],
-        "team/index.html": ["highly talented and tenacious researchers", "coalition of ideas", "team-overview.png"],
+        "press/index.html": ["DST", "Times of India", "Deccan Herald", "press-dst.jpg", "press-times-of-india.jpg", "press-deccan-herald.png", "Trademarks"],
+        "team/index.html": ["highly talented and tenacious researchers", "researchers and engineers", "team-overview.png"],
         "contact/index.html": ["subodh@nexatom.in", "+91 8884998660", "LinkedIn", "nexatom-lockup.png"],
         "404.html": ["Page not found", "Return home"],
     }
@@ -410,6 +409,26 @@ def main() -> None:
         fail("source MKV should not be referenced by production site")
     if 'href="https://www.linkedin.com/"' in all_text:
         fail("generic LinkedIn homepage URL remains")
+    for phrase in [
+        "specified timing jitter",
+        "timing jitter specification",
+        "Relevant workflows",
+        "Product packaging and identity view",
+        "Release details",
+        "Updater manifest",
+        "latest.json technical metadata",
+        "The product directory for",
+        "public Windows",
+        "Hardware class",
+        "hardware configuration",
+        "coalition of ideas",
+        "practical, tangible, and real changes",
+        "public references",
+        "informational and press coverage context",
+        "release contexts",
+    ]:
+        if phrase in all_text:
+            fail(f"internal or awkward public copy remains: {phrase}")
 
     required_external = [
         "https://github.com/nexatom-research/nexatom-downloads/releases/download/time-tagger-UTT810-v1.0.1/Nexatom_UTT810_Setup_1.0.1.exe",
