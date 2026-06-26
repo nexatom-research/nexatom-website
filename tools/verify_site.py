@@ -368,11 +368,11 @@ def main() -> None:
     for phrase in [
         "Nexatom UTT810 Time Tagger Software",
         "Download for Windows",
-        "1.0.1",
-        "85.78 MB",
-        "cee5a78865e0b0923649c4f922327ab54de059721135fefa8bda499ed6510e3a",
+        "1.0.2",
+        "89.11 MB",
+        "fa00a4b2a2814b0479027e3659a19cba28214cd1e4768956890c2958d06e02e5",
         "After first install, future updates are available inside the app.",
-        "https://github.com/nexatom-research/nexatom-downloads/releases/download/time-tagger-UTT810-v1.0.1/Nexatom_UTT810_Setup_1.0.1.exe",
+        "https://github.com/nexatom-research/nexatom-downloads/releases/download/time-tagger-UTT810-v1.0.2/Nexatom_UTT810_Setup_1.0.2.exe",
         "https://downloads.nexatom.in/apps/time-tagger/UTT810/latest.json",
     ]:
         if phrase not in download:
@@ -431,8 +431,8 @@ def main() -> None:
             fail(f"internal or awkward public copy remains: {phrase}")
 
     required_external = [
-        "https://github.com/nexatom-research/nexatom-downloads/releases/download/time-tagger-UTT810-v1.0.1/Nexatom_UTT810_Setup_1.0.1.exe",
-        "https://github.com/nexatom-research/nexatom-downloads/releases/tag/time-tagger-UTT810-v1.0.1",
+        "https://github.com/nexatom-research/nexatom-downloads/releases/download/time-tagger-UTT810-v1.0.2/Nexatom_UTT810_Setup_1.0.2.exe",
+        "https://github.com/nexatom-research/nexatom-downloads/releases/tag/time-tagger-UTT810-v1.0.2",
         "https://downloads.nexatom.in/apps/time-tagger/UTT810/latest.json",
         "https://in.linkedin.com/in/subodhvashist",
         "https://dst.gov.in/rri-spinoff-companys-tunable-lasers-could-lower-costs-quantum-optics-labs",
