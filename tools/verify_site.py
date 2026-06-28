@@ -59,6 +59,7 @@ def main() -> None:
         "products/time-taggers/utt32/index.html": "Products",
         "downloads/index.html": "Downloads",
         "downloads/utt810/index.html": "Downloads",
+        "downloads/utt810/sdk-preview/index.html": "Downloads",
         "achievements/index.html": "Achievements",
         "press/index.html": "Press",
         "team/index.html": "Team",
@@ -74,6 +75,7 @@ def main() -> None:
         "products/time-taggers/utt32/index.html",
         "downloads/index.html",
         "downloads/utt810/index.html",
+        "downloads/utt810/sdk-preview/index.html",
         "achievements/index.html",
         "press/index.html",
         "team/index.html",
@@ -378,6 +380,26 @@ def main() -> None:
         if phrase not in download:
             fail(f"download page missing phrase: {phrase}")
 
+
+    sdk = (SITE / "downloads/utt810/sdk-preview/index.html").read_text(encoding="utf-8")
+    for phrase in [
+        "NexatomTT SDK Preview",
+        "Download SDK Preview",
+        "0.1.0-preview.4",
+        "4.15 MB",
+        "3c4c4670fa90522dd16c01a66774bacd7268ff24963a9ba89c336d04ec354ac7",
+        "365691201e99b5935da7fd7cabb637e6568c55a7",
+        "Windows x64",
+        "Public preview",
+        "C API",
+        "Python package",
+        "Firmware safety note",
+        "https://github.com/nexatom-research/nexatom-downloads/releases/download/nexatomtt-sdk-v0.1.0-preview.4/nexatomtt-sdk-v0.1.0-preview.4-windows-x64.zip",
+        "https://github.com/nexatom-research/nexatom-downloads/releases/tag/nexatomtt-sdk-v0.1.0-preview.4",
+        "https://downloads.nexatom.in/sdks/nexatomtt/windows-x64/latest.json",
+    ]:
+        if phrase not in sdk:
+            fail(f"SDK preview page missing phrase: {phrase}")
     page_checks = {
         "achievements/index.html": ["Research-led instrumentation milestones", "Raman Research Institute", "quantum and spectroscopy", "License agreement signing"],
         "press/index.html": ["DST", "Times of India", "Deccan Herald", "press-dst.jpg", "press-times-of-india.jpg", "press-deccan-herald.png", "Trademarks"],
@@ -434,6 +456,9 @@ def main() -> None:
         "https://github.com/nexatom-research/nexatom-downloads/releases/download/time-tagger-UTT810-v1.0.2/Nexatom_UTT810_Setup_1.0.2.exe",
         "https://github.com/nexatom-research/nexatom-downloads/releases/tag/time-tagger-UTT810-v1.0.2",
         "https://downloads.nexatom.in/apps/time-tagger/UTT810/latest.json",
+        "https://github.com/nexatom-research/nexatom-downloads/releases/download/nexatomtt-sdk-v0.1.0-preview.4/nexatomtt-sdk-v0.1.0-preview.4-windows-x64.zip",
+        "https://github.com/nexatom-research/nexatom-downloads/releases/tag/nexatomtt-sdk-v0.1.0-preview.4",
+        "https://downloads.nexatom.in/sdks/nexatomtt/windows-x64/latest.json",
         "https://in.linkedin.com/in/subodhvashist",
         "https://dst.gov.in/rri-spinoff-companys-tunable-lasers-could-lower-costs-quantum-optics-labs",
         "https://timesofindia.indiatimes.com/india/rris-first-spinoff-to-produce-cost-effective-laser-systems-for-quantum-optics/articleshow/111858581.cms",
