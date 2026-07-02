@@ -404,7 +404,7 @@ def main() -> None:
         "achievements/index.html": ["Research-led instrumentation milestones", "Raman Research Institute", "quantum and spectroscopy", "License agreement signing"],
         "press/index.html": ["DST", "Times of India", "Deccan Herald", "press-dst.jpg", "press-times-of-india.jpg", "press-deccan-herald.png", "Trademarks"],
         "team/index.html": ["highly talented and tenacious researchers", "researchers and engineers", "team-overview.png"],
-        "contact/index.html": ["subodh@nexatom.in", "+91 8884998660", "LinkedIn", "nexatom-lockup.png"],
+        "contact/index.html": ["subodh@nexatom.in", "+91 8884998660", "LinkedIn", "nexatom-lockup.png", "Send enquiry", "https://api.web3forms.com/submit", "85e41654-0c13-49c3-8842-cedf6db3bf3d", "Email", "Phone / WhatsApp", "Interest / Message"],
         "404.html": ["Page not found", "Return home"],
     }
     for rel, phrases in page_checks.items():

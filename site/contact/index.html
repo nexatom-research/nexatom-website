@@ -36,7 +36,27 @@
         </div>
       </div>
     </section>
-    <section class="section">
+        <section class="section">
+      <div class="contact-form-panel">
+        <div>
+          <h2>Send an enquiry</h2>
+          <p>Share your email, phone number, and enquiry. The message will be sent to Nexatom for reply.</p>
+        </div>
+        <form class="contact-form" action="https://api.web3forms.com/submit" method="POST">
+          <input type="hidden" name="access_key" value="85e41654-0c13-49c3-8842-cedf6db3bf3d">
+          <input type="hidden" name="subject" value="New enquiry from Nexatom website">
+          <input type="hidden" name="from_name" value="Nexatom Website">
+          <input type="checkbox" name="botcheck" class="botcheck" tabindex="-1" autocomplete="off">
+          <label for="email">Email</label>
+          <input id="email" name="email" type="email" autocomplete="email" required>
+          <label for="phone">Phone / WhatsApp</label>
+          <input id="phone" name="phone" type="tel" autocomplete="tel">
+          <label for="message">Interest / Message</label>
+          <textarea id="message" name="message" rows="6" required></textarea>
+          <button class="button" type="submit">Send enquiry</button>
+        </form>
+      </div>
+    </section><section class="section">
       <div class="contact-panel">
         <figure class="contact-lockup">
           <img src="../assets/images/nexatom-lockup.png" alt="Nexatom Research &amp; Instruments logo">

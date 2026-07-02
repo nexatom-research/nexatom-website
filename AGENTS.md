@@ -197,4 +197,12 @@ The download page can link to the GitHub Release installer asset or read/display
 - Keep copy concrete and product-focused.
 - Avoid overbuilding forms, CMS, or backend features in the first pass.
 - Do not touch DNS from code. DNS changes must be made deliberately by the user or with explicit confirmation.
+## Contact Form
 
+The static contact form uses Web3Forms.
+
+- Endpoint: `https://api.web3forms.com/submit`
+- Access key: `85e41654-0c13-49c3-8842-cedf6db3bf3d`
+- The key is embedded in public HTML and should be treated as a public form identifier, not a private secret.
+- Form submissions should route to `subodh@nexatom.in`.
+- Keep direct email and phone contact visible as fallback contact paths.
