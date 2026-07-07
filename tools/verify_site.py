@@ -179,7 +179,7 @@ def main() -> None:
             fail(f"{html.relative_to(ROOT)} missing shared header")
         if '<footer class="site-footer">' not in text:
             fail(f"{html.relative_to(ROOT)} missing shared footer")
-        if '<main class="page">' not in text:
+        if '<main class="page"' not in text:
             fail(f"{html.relative_to(ROOT)} missing page wrapper")
         if '<meta name="description"' not in text:
             fail(f"{html.relative_to(ROOT)} missing meta description")
@@ -370,12 +370,14 @@ def main() -> None:
     for phrase in [
         "Nexatom UTT810 Time Tagger Software",
         "Download for Windows",
-        "1.0.2",
-        "89.11 MB",
-        "fa00a4b2a2814b0479027e3659a19cba28214cd1e4768956890c2958d06e02e5",
+        "1.0.3",
+        "89.49 MB",
+        "0e5736ee34ec9582c07aff88223064bbe1f514bcea8f5fa785575169129aae96",
         "After first install, future updates are available inside the app.",
-        "https://github.com/nexatom-research/nexatom-downloads/releases/download/time-tagger-UTT810-v1.0.2/Nexatom_UTT810_Setup_1.0.2.exe",
+        "https://github.com/nexatom-research/nexatom-downloads/releases/download/time-tagger-UTT810-v1.0.3/Nexatom_UTT810_Setup_1.0.3.exe",
         "https://downloads.nexatom.in/apps/time-tagger/UTT810/latest.json",
+        "../../assets/js/download-metadata.js",
+        "<main class=\"page\" data-manifest-url",
     ]:
         if phrase not in download:
             fail(f"download page missing phrase: {phrase}")
@@ -385,18 +387,20 @@ def main() -> None:
     for phrase in [
         "NexatomTT SDK Preview",
         "Download SDK Preview",
-        "0.1.0-preview.4",
-        "4.15 MB",
-        "3c4c4670fa90522dd16c01a66774bacd7268ff24963a9ba89c336d04ec354ac7",
-        "365691201e99b5935da7fd7cabb637e6568c55a7",
+        "0.1.0-preview.6",
+        "5.32 MB",
+        "046e286728d4609ce8ef77c71b2e4e23d850b6c1345ed4d2a25e0de0281421d1",
+        "a9be55bdf9d68af15755ade2aa55dbb4ff48e1bf",
         "Windows x64",
         "Public preview",
         "C API",
         "Python package",
         "Firmware safety note",
-        "https://github.com/nexatom-research/nexatom-downloads/releases/download/nexatomtt-sdk-v0.1.0-preview.4/nexatomtt-sdk-v0.1.0-preview.4-windows-x64.zip",
-        "https://github.com/nexatom-research/nexatom-downloads/releases/tag/nexatomtt-sdk-v0.1.0-preview.4",
+        "https://github.com/nexatom-research/nexatom-downloads/releases/download/nexatomtt-sdk-v0.1.0-preview.6/nexatomtt-sdk-v0.1.0-preview.6-windows-x64.zip",
+        "https://github.com/nexatom-research/nexatom-downloads/releases/tag/nexatomtt-sdk-v0.1.0-preview.6",
         "https://downloads.nexatom.in/sdks/nexatomtt/windows-x64/latest.json",
+        "../../../assets/js/download-metadata.js",
+        "<main class=\"page\" data-manifest-url",
     ]:
         if phrase not in sdk:
             fail(f"SDK preview page missing phrase: {phrase}")
@@ -453,11 +457,11 @@ def main() -> None:
             fail(f"internal or awkward public copy remains: {phrase}")
 
     required_external = [
-        "https://github.com/nexatom-research/nexatom-downloads/releases/download/time-tagger-UTT810-v1.0.2/Nexatom_UTT810_Setup_1.0.2.exe",
-        "https://github.com/nexatom-research/nexatom-downloads/releases/tag/time-tagger-UTT810-v1.0.2",
+        "https://github.com/nexatom-research/nexatom-downloads/releases/download/time-tagger-UTT810-v1.0.3/Nexatom_UTT810_Setup_1.0.3.exe",
+        "https://github.com/nexatom-research/nexatom-downloads/releases/tag/time-tagger-UTT810-v1.0.3",
         "https://downloads.nexatom.in/apps/time-tagger/UTT810/latest.json",
-        "https://github.com/nexatom-research/nexatom-downloads/releases/download/nexatomtt-sdk-v0.1.0-preview.4/nexatomtt-sdk-v0.1.0-preview.4-windows-x64.zip",
-        "https://github.com/nexatom-research/nexatom-downloads/releases/tag/nexatomtt-sdk-v0.1.0-preview.4",
+        "https://github.com/nexatom-research/nexatom-downloads/releases/download/nexatomtt-sdk-v0.1.0-preview.6/nexatomtt-sdk-v0.1.0-preview.6-windows-x64.zip",
+        "https://github.com/nexatom-research/nexatom-downloads/releases/tag/nexatomtt-sdk-v0.1.0-preview.6",
         "https://downloads.nexatom.in/sdks/nexatomtt/windows-x64/latest.json",
         "https://in.linkedin.com/in/subodhvashist",
         "https://dst.gov.in/rri-spinoff-companys-tunable-lasers-could-lower-costs-quantum-optics-labs",

@@ -158,18 +158,27 @@ The website should provide:
 Current release metadata:
 
 - Release repo: `nexatom-research/nexatom-downloads`
-- Release tag: `time-tagger-UTT810-v1.0.2`
-- Release page: `https://github.com/nexatom-research/nexatom-downloads/releases/tag/time-tagger-UTT810-v1.0.2`
+- Release tag: `time-tagger-UTT810-v1.0.3`
+- Release page: `https://github.com/nexatom-research/nexatom-downloads/releases/tag/time-tagger-UTT810-v1.0.3`
 - Installer URL:
-  `https://github.com/nexatom-research/nexatom-downloads/releases/download/time-tagger-UTT810-v1.0.2/Nexatom_UTT810_Setup_1.0.2.exe`
+  `https://github.com/nexatom-research/nexatom-downloads/releases/download/time-tagger-UTT810-v1.0.3/Nexatom_UTT810_Setup_1.0.3.exe`
+- Installer size: `89,487,832 bytes`
+- Installer SHA256: `0e5736ee34ec9582c07aff88223064bbe1f514bcea8f5fa785575169129aae96`
 - Updater manifest:
   `https://downloads.nexatom.in/apps/time-tagger/UTT810/latest.json`
+- Public SDK release tag: `nexatomtt-sdk-v0.1.0-preview.6`
+- Public SDK URL:
+  `https://github.com/nexatom-research/nexatom-downloads/releases/download/nexatomtt-sdk-v0.1.0-preview.6/nexatomtt-sdk-v0.1.0-preview.6-windows-x64.zip`
+- Public SDK size: `5,319,452 bytes`
+- Public SDK SHA256: `046e286728d4609ce8ef77c71b2e4e23d850b6c1345ed4d2a25e0de0281421d1`
+- Public SDK manifest:
+  `https://downloads.nexatom.in/sdks/nexatomtt/windows-x64/latest.json`
 
 Prefer linking users to a website download page:
 
 `https://www.nexatom.in/downloads/utt810/`
 
-The download page can link to the GitHub Release installer asset or read/display metadata from `latest.json`.
+The download pages keep static fallback metadata and use `site/assets/js/download-metadata.js` to refresh installer and SDK details from `latest.json` when JavaScript is available.
 
 ## First Implementation Priorities
 
