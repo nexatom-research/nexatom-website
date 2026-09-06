@@ -1,3 +1,10 @@
+## Shared development
+
+Before starting or resuming work, read [SHARED-DEVELOPMENT.md](SHARED-DEVELOPMENT.md)
+and follow `shared-development-v1`: one owned task branch/worktree per writer,
+all committed checkpoints retained, and reviewed merge-commit PR integration.
+Read this file in full; the project-specific instructions below remain in force.
+
 # AGENTS.md
 
 This repository is the planned static website for Nexatom Research & Instruments.
