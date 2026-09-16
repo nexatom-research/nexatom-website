@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Download the NexatomTT SDK Preview for UTT810 Python and C integration on Windows x64.">
+  <meta name="description" content="NexatomTT SDK preview downloads and C, C++ and Python integration guidance for Windows x64 and Linux x64.">
   <title>NexatomTT SDK Preview | Nexatom Research &amp; Instruments</title>
   <link rel="stylesheet" href="../../../assets/css/styles.css">
   <link rel="icon" type="image/png" href="../../../assets/images/nexatom-favicon-filled.png">
@@ -21,7 +21,7 @@
       <a href="../../../contact/">Contact</a>
     </nav>
   </header>
-  <main class="page" data-manifest-url="https://downloads.nexatom.in/sdks/nexatomtt/windows-x64/latest.json">
+  <main class="page">
     <section class="hero compact">
       <div>
         <nav class="breadcrumb" aria-label="Breadcrumb">
@@ -29,18 +29,22 @@
         </nav>
         <div class="eyebrow">Downloads / UTT810 SDK Preview</div>
         <h1>NexatomTT SDK Preview</h1>
-        <p>Public preview SDK for UTT810 Python and C integration on Windows x64. The standard UTT810 software installer remains the primary user application download.</p>
+        <p>Build C, C++ and Python applications with the NexatomTT SDK. Choose your platform below; the standard UTT810 software installer remains the primary user application download.</p>
         <div class="actions">
-          <a class="button" href="https://github.com/nexatom-research/nexatom-downloads/releases/download/nexatomtt-sdk-v0.1.0-preview.6/nexatomtt-sdk-v0.1.0-preview.6-windows-x64.zip" data-href="downloadUrl">Download SDK Preview</a>
-          <a class="button secondary" href="https://github.com/nexatom-research/nexatom-downloads/releases/tag/nexatomtt-sdk-v0.1.0-preview.6" data-href="releaseUrl">View GitHub Release</a>
+          <a class="button" href="#platforms">Download SDK Preview</a>
           <a class="button secondary" href="../../../downloads/utt810/">Download UTT810 Software</a>
         </div>
       </div>
     </section>
 
-    <section class="section">
-      <div class="download-panel">
-        <h2>SDK preview details</h2>
+    <section class="section" id="platforms">
+      <h2>Choose your platform</h2>
+      <div class="download-panel" data-sdk-platform="windows-x64" data-manifest-url="https://downloads.nexatom.in/sdks/nexatomtt/windows-x64/latest.json">
+        <h3>Windows x64</h3>
+        <div class="actions">
+          <a class="button" href="https://github.com/nexatom-research/nexatom-downloads/releases/download/nexatomtt-sdk-v0.1.0-preview.6/nexatomtt-sdk-v0.1.0-preview.6-windows-x64.zip" data-href="downloadUrl">Download for Windows</a>
+          <a class="button secondary" href="https://github.com/nexatom-research/nexatom-downloads/releases/tag/nexatomtt-sdk-v0.1.0-preview.6" data-href="releaseUrl">View GitHub Release</a>
+        </div>
         <table class="spec-table">
           <tbody>
             <tr><th scope="row">Version</th><td data-field="version">0.1.0-preview.6</td></tr>
@@ -57,12 +61,44 @@
     </section>
 
     <section class="section">
+      <div class="download-panel" data-sdk-platform="linux-x64" data-manifest-url="https://downloads.nexatom.in/sdks/nexatomtt/linux-x64/latest.json">
+        <h3>Linux x64</h3>
+        <p data-release-pending>The Linux preview is being prepared. A download will appear here when it is available.</p>
+        <div data-release-available hidden>
+          <div class="actions">
+            <a class="button" data-href="downloadUrl">Download for Linux</a>
+            <a class="button secondary" data-href="releaseUrl">View GitHub Release</a>
+          </div>
+          <table class="spec-table">
+            <tbody>
+              <tr><th scope="row">Version</th><td data-field="version"></td></tr>
+              <tr><th scope="row">File</th><td data-field="fileName"></td></tr>
+              <tr><th scope="row">File size</th><td data-field="fileSize"></td></tr>
+              <tr><th scope="row">SHA256</th><td><code data-field="sha256"></code></td></tr>
+              <tr><th scope="row">Platform</th><td>Linux x64</td></tr>
+              <tr><th scope="row">Distribution</th><td>Public preview</td></tr>
+              <tr><th scope="row">Native commit</th><td><code data-field="nativeGitCommit"></code></td></tr>
+              <tr><th scope="row">SDK information</th><td><a href="https://downloads.nexatom.in/sdks/nexatomtt/linux-x64/latest.json">View SDK details</a></td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p>Use the x86-64 Linux package with the FTDI USB access instructions included in its README.</p>
+      </div>
+    </section>
+
+    <section class="section">
       <h2>Included integration surfaces</h2>
       <div class="grid">
-        <div class="card"><h3>C API</h3><p>Public C header and native runtime libraries for UTT810 integration.</p></div>
+        <div class="card"><h3>C API and C++ integration</h3><p>Include <code>nexatomtt_c_api.h</code> and link the native runtime library. C++ applications use the same C ABI.</p></div>
         <div class="card"><h3>Python package</h3><p>Python wrapper and examples for loading the SDK, checking version information, booting an existing runtime slot, realtime smoke checks, and TIHI/MFCO workflows.</p></div>
         <div class="card"><h3>Preview documentation</h3><p>Public preview documentation, license text, third-party notices, package manifest, and SHA256 verification file.</p></div>
       </div>
+    </section>
+
+    <section class="section">
+      <h2>Start with the examples</h2>
+      <p>Extract the SDK and run <code>python python/examples/load_smoke.py --home .</code> from its root. Use <code>python3</code> on Linux when needed. The package README explains driver setup and the supported hardware workflows.</p>
+      <p>The next Windows and Linux preview adds the standalone project in <code>examples/sdk</code> for C and C++, alongside Python channel setup and processed/raw acquisition examples. Follow the package's own example guide for its version. Windows C/C++ examples use MinGW and the matching import library; Linux examples link the shared library.</p>
     </section>
 
     <section class="section">

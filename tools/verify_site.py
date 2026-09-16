@@ -392,15 +392,22 @@ def main() -> None:
         "046e286728d4609ce8ef77c71b2e4e23d850b6c1345ed4d2a25e0de0281421d1",
         "a9be55bdf9d68af15755ade2aa55dbb4ff48e1bf",
         "Windows x64",
+        "Linux x64",
         "Public preview",
         "C API",
         "Python package",
+        "examples/sdk",
+        "C++",
+        "The Linux preview is being prepared.",
+        "data-release-available hidden",
         "Firmware safety note",
         "https://github.com/nexatom-research/nexatom-downloads/releases/download/nexatomtt-sdk-v0.1.0-preview.6/nexatomtt-sdk-v0.1.0-preview.6-windows-x64.zip",
         "https://github.com/nexatom-research/nexatom-downloads/releases/tag/nexatomtt-sdk-v0.1.0-preview.6",
         "https://downloads.nexatom.in/sdks/nexatomtt/windows-x64/latest.json",
+        "https://downloads.nexatom.in/sdks/nexatomtt/linux-x64/latest.json",
         "../../../assets/js/download-metadata.js",
-        "<main class=\"page\" data-manifest-url",
+        'data-sdk-platform="windows-x64"',
+        'data-sdk-platform="linux-x64"',
     ]:
         if phrase not in sdk:
             fail(f"SDK preview page missing phrase: {phrase}")
