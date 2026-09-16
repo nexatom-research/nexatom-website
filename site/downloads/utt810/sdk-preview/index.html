@@ -49,11 +49,11 @@
           <tbody>
             <tr><th scope="row">Version</th><td data-field="version">0.1.0-preview.7</td></tr>
             <tr><th scope="row">File</th><td data-field="fileName">nexatomtt-sdk-v0.1.0-preview.7-windows-x64.zip</td></tr>
-            <tr><th scope="row">File size</th><td data-field="fileSize">4,821,743 bytes / 4.82 MB</td></tr>
-            <tr><th scope="row">SHA256</th><td><code data-field="sha256">5139dabfb835c30a2d45bbbcdb5f8df9c957c4b6af80b2478419e8cdffce27fa</code></td></tr>
+            <tr><th scope="row">File size</th><td data-field="fileSize">4,828,195 bytes / 4.83 MB</td></tr>
+            <tr><th scope="row">SHA256</th><td><code data-field="sha256">8d3c6d1fb4585590f5b397d481f2d292d031e38b9987eae398fed855b6a714d1</code></td></tr>
             <tr><th scope="row">Platform</th><td>Windows x64</td></tr>
             <tr><th scope="row">Distribution</th><td>Public preview</td></tr>
-            <tr><th scope="row">Native commit</th><td><code data-field="nativeGitCommit">876cf20331a6b4269519a371bde3c837647c79e8</code></td></tr>
+            <tr><th scope="row">Native commit</th><td><code data-field="nativeGitCommit">f02bf1e59030578c398bbcf2ec75611d3dfbaf24</code></td></tr>
             <tr><th scope="row">SDK information</th><td><a href="https://downloads.nexatom.in/sdks/nexatomtt/windows-x64/latest.json">View SDK details</a></td></tr>
           </tbody>
         </table>
@@ -63,8 +63,7 @@
     <section class="section">
       <div class="download-panel" data-sdk-platform="linux-x64" data-manifest-url="https://downloads.nexatom.in/sdks/nexatomtt/linux-x64/latest.json">
         <h3>Linux x64</h3>
-        <p data-release-pending>The Linux archive is built; final hardware qualification is pending. Downloads will be enabled after acceptance.</p>
-        <div data-release-available hidden>
+        <div data-release-available>
           <div class="actions">
             <a class="button" href="https://github.com/nexatom-research/nexatom-downloads/releases/download/nexatomtt-sdk-v0.1.0-preview.7/nexatomtt-sdk-v0.1.0-preview.7-linux-x64.tar.gz" data-href="downloadUrl">Download for Linux</a>
             <a class="button secondary" href="https://github.com/nexatom-research/nexatom-downloads/releases/tag/nexatomtt-sdk-v0.1.0-preview.7" data-href="releaseUrl">View GitHub Release</a>
@@ -73,16 +72,16 @@
             <tbody>
               <tr><th scope="row">Version</th><td data-field="version">0.1.0-preview.7</td></tr>
               <tr><th scope="row">File</th><td data-field="fileName">nexatomtt-sdk-v0.1.0-preview.7-linux-x64.tar.gz</td></tr>
-              <tr><th scope="row">File size</th><td data-field="fileSize">6,951,658 bytes / 6.95 MB</td></tr>
-              <tr><th scope="row">SHA256</th><td><code data-field="sha256">e597a2ed92ba0ab2aae193181f7b1c01686f789b032c69eebc5e710761eeda5c</code></td></tr>
+              <tr><th scope="row">File size</th><td data-field="fileSize">6,954,890 bytes / 6.95 MB</td></tr>
+              <tr><th scope="row">SHA256</th><td><code data-field="sha256">02ad4a14e90bb4312ba62f08e733aeb72ea3b622d73857006137af65a586e4a3</code></td></tr>
               <tr><th scope="row">Platform</th><td>Linux x64</td></tr>
               <tr><th scope="row">Distribution</th><td>Public preview</td></tr>
-              <tr><th scope="row">Native commit</th><td><code data-field="nativeGitCommit">876cf20331a6b4269519a371bde3c837647c79e8</code></td></tr>
+              <tr><th scope="row">Native commit</th><td><code data-field="nativeGitCommit">f02bf1e59030578c398bbcf2ec75611d3dfbaf24</code></td></tr>
               <tr><th scope="row">SDK information</th><td><a href="https://downloads.nexatom.in/sdks/nexatomtt/linux-x64/latest.json">View SDK details</a></td></tr>
             </tbody>
           </table>
         </div>
-        <p>Built on Ubuntu 24.04. Follow the FTDI USB access instructions included in the README when the qualified package is available.</p>
+        <p>Built and hardware-tested on Ubuntu 24.04 under WSL2 with USB forwarding. Follow the FTDI USB access instructions included in the README.</p>
       </div>
     </section>
 
@@ -99,7 +98,7 @@
       <h2>Start with the examples</h2>
       <p>Extract the SDK and run <code>python python/examples/load_smoke.py --home .</code> from its root. Use <code>python3</code> on Linux when needed. The package README explains driver setup and the supported hardware workflows.</p>
       <p>Use the standalone project in <code>examples/sdk</code> for C and C++, or the Python channel setup and processed/raw acquisition examples. They demonstrate threshold, edge, delay and hysteresis configuration, saving and offline analysis. Windows C/C++ examples use MinGW and the matching import library; Linux examples link the shared library.</p>
-      <p>This preview is tested with the bootloader-equipped Zynq running ZYNQ_004, including digital input delays through 256 ns. One instrument is active at a time. Kintex and legacy Zynq hardware qualification for this preview, and external analog validation, remain pending.</p>
+      <p>This preview is tested on Windows and Ubuntu 24.04 under WSL2 with the bootloader-equipped Zynq running ZYNQ_004, using internal test pulses and digital input delays through 256 ns. One instrument is active at a time. Kintex and legacy Zynq hardware qualification for this preview, and external analog validation, remain pending.</p>
     </section>
 
     <section class="section">
