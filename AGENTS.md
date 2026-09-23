@@ -165,12 +165,12 @@ The website should provide:
 Current release metadata:
 
 - Release repo: `nexatom-research/nexatom-downloads`
-- Release tag: `time-tagger-UTT810-v1.0.4`
-- Release page: `https://github.com/nexatom-research/nexatom-downloads/releases/tag/time-tagger-UTT810-v1.0.4`
+- Release tag: `time-tagger-UTT810-v1.0.5`
+- Release page: `https://github.com/nexatom-research/nexatom-downloads/releases/tag/time-tagger-UTT810-v1.0.5`
 - Installer URL:
-  `https://github.com/nexatom-research/nexatom-downloads/releases/download/time-tagger-UTT810-v1.0.4/Nexatom_UTT810_Setup_1.0.4.exe`
-- Installer size: `90,524,992 bytes`
-- Installer SHA256: `2b2fa187ad92b7ff528a9d8619801251abf93af6ace87af65549b9606503a1bc`
+  `https://github.com/nexatom-research/nexatom-downloads/releases/download/time-tagger-UTT810-v1.0.5/Nexatom_UTT810_Setup_1.0.5.exe`
+- Installer size: `105,381,831 bytes`
+- Installer SHA256: `61dafd8aed9d06054f99b556917684e7eb2c90b79aec96c24438875fda08c351`
 - Updater manifest:
   `https://downloads.nexatom.in/apps/time-tagger/UTT810/latest.json`
 - Public SDK release tag: `nexatomtt-sdk-v0.1.0-preview.6`

@@ -370,11 +370,11 @@ def main() -> None:
     for phrase in [
         "Nexatom UTT810 Time Tagger Software",
         "Download for Windows",
-        "1.0.4",
-        "90.52 MB",
-        "2b2fa187ad92b7ff528a9d8619801251abf93af6ace87af65549b9606503a1bc",
+        "1.0.5",
+        "105.38 MB",
+        "61dafd8aed9d06054f99b556917684e7eb2c90b79aec96c24438875fda08c351",
         "After first install, future updates are available inside the app.",
-        "https://github.com/nexatom-research/nexatom-downloads/releases/download/time-tagger-UTT810-v1.0.4/Nexatom_UTT810_Setup_1.0.4.exe",
+        "https://github.com/nexatom-research/nexatom-downloads/releases/download/time-tagger-UTT810-v1.0.5/Nexatom_UTT810_Setup_1.0.5.exe",
         "https://downloads.nexatom.in/apps/time-tagger/UTT810/latest.json",
         "../../assets/js/download-metadata.js",
         "<main class=\"page\" data-manifest-url",
@@ -476,8 +476,8 @@ def main() -> None:
             fail(f"internal or awkward public copy remains: {phrase}")
 
     required_external = [
-        "https://github.com/nexatom-research/nexatom-downloads/releases/download/time-tagger-UTT810-v1.0.4/Nexatom_UTT810_Setup_1.0.4.exe",
-        "https://github.com/nexatom-research/nexatom-downloads/releases/tag/time-tagger-UTT810-v1.0.4",
+        "https://github.com/nexatom-research/nexatom-downloads/releases/download/time-tagger-UTT810-v1.0.5/Nexatom_UTT810_Setup_1.0.5.exe",
+        "https://github.com/nexatom-research/nexatom-downloads/releases/tag/time-tagger-UTT810-v1.0.5",
         "https://downloads.nexatom.in/apps/time-tagger/UTT810/latest.json",
         "https://github.com/nexatom-research/nexatom-downloads/releases/download/nexatomtt-sdk-v0.1.0-preview.8/nexatomtt-sdk-v0.1.0-preview.8-windows-x64.zip",
         "https://github.com/nexatom-research/nexatom-downloads/releases/download/nexatomtt-sdk-v0.1.0-preview.8/nexatomtt-sdk-v0.1.0-preview.8-linux-x64.tar.gz",
