@@ -1,3 +1,9 @@
+## Shared build context
+
+Before environment setup or validation, read [the shared build context](docs/DEVELOPMENT.md).
+It records the dated source/tool inputs and remaining gates, not new execution
+authority. All existing project instructions and pauses below remain in force.
+
 ## Shared development
 
 Before starting or resuming work, read [SHARED-DEVELOPMENT.md](SHARED-DEVELOPMENT.md)
